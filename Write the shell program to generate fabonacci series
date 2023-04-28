@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Enter the maximum value for the Fibonacci series: "
+read max
+
+# Initialize the first two terms
+a=0
+b=1
+
+echo "The Fibonacci series up to $max is: "
+
+while [ "$a" -le "$max" ]
+do
+  echo "$a"
+  # Compute the next term
+  next=$((a + b))
+  a=$b
+  b=$next
+done
