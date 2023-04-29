@@ -1,0 +1,52 @@
+Here's the pseudo code for the given program:
+
+Sequencial File Allocation
+
+1. Define a structure named fileTable with members name, sb and nob.
+2. Declare an array of fileTable named ft.
+3. Declare variables i, j, and n of integer data type.
+4. Declare a character array s of size 20.
+5. Read the value of n from the user.
+6. Use a loop from i=0 to n-1 to read the file name, starting block and number of blocks of each file and store it in the corresponding members of the ft array.
+7. Read the file name to be searched from the user and store it in the variable s.
+8. Use a loop from i=0 to n-1 to search for the file in the ft array. If the file is found, break out of the loop.
+9. If the loop index i is equal to n, print "File not found".
+10. Else, print the details of the file including the file name, starting block, number of blocks and blocks occupied by the file.
+
+
+Pseudo code for linked file allocation:
+
+1. Create a structure called 'block' with two fields - bno to store block number and next to store the address of the next block.
+2. Create a structure called 'fileTable' with three fields - name to store the name of the file, nob to store the number of blocks in the file, and sb to store the starting block of the file.
+3. Declare an array of fileTable structures called ft with size 30.
+4. Declare a variable called temp of type 'block' to store the address of the current block being allocated.
+5. Read the number of files from the user and store it in a variable called n.
+6. Using a loop, read the details of each file from the user and store it in the corresponding fileTable structure in the ft array. For each file, allocate memory for the first block and store its address in the sb field of the fileTable structure. Then read the block number of the first block from the user and store it in the bno field of the first block. Use another loop to allocate memory for the remaining blocks of the file and link them together using the 'next' field of the block structure. Read the block number of each block from the user and store it in the bno field of the block structure.
+7. Read the name of the file to be searched from the user and store it in a string variable called s.
+8. Using a loop, search for the file with the given name in the ft array. If the file is found, break the loop and store the index of the fileTable structure in the variable i. If the file is not found, print "File Not Found" and exit the program.
+9. If the file is found, print the name, number of blocks and block numbers of the file using the values stored in the corresponding fields of the fileTable and block structures. To print the block numbers, traverse the linked list starting from the block pointed to by the sb field of the fileTable structure and print the bno field of each block along with an arrow '->' until the end of the list is reached.
+
+
+Indexed file allocation
+S
+Define a structure fileTable with the following members:
+    name - an array to store the name of the file
+    nob - an integer to store the number of blocks the file occupies
+    blocks - an array to store the block numbers occupied by the file
+    
+Define an array of fileTable structures called ft
+
+Prompt the user to enter the number of files (n)
+
+For i from 0 to n-1 do the following:
+    Prompt the user to enter the name of the file and store it in ft[i].name
+    Prompt the user to enter the number of blocks the file occupies and store it in ft[i].nob
+    Prompt the user to enter the block numbers occupied by the file and store them in ft[i].blocks
+    
+Prompt the user to enter the name of the file to search for and store it in s
+
+For i from 0 to n-1 do the following:
+    If the name of the file in ft[i] is equal to s, break out of the loop
+    
+If i equals n, print "File Not Found"
+Else, print the name of the file, the number of blocks it occupies, and the block numbers occupied

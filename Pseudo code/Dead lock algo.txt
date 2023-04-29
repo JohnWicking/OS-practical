@@ -1,0 +1,25 @@
+Here is the pseudo code for the Banker's Algorithm:
+
+1. Initialize the allocation, maximum and available matrices.
+2. Compute the need matrix.
+3. Initialize the finish array to 0 for all processes.
+4. Initialize an empty safe sequence array and an index variable to 0.
+5. Repeat until all processes are finished:
+    a. For each process that is not finished:
+        i. Check if its need can be satisfied with the available resources.
+        ii. If the need can be satisfied, mark the process as finished and add it to the safe sequence.
+        iii. Update the available resources with the allocated resources of the finished process.
+6. If all processes are finished, output the safe sequence. Otherwise, output an error message indicating that the system is in deadlock.
+
+
+Here's a simplified pseudo code for the Banker's Algorithm:
+
+1. Input the number of processes and resources
+2. Input the maximum need (claim) and allocation matrices for each process
+3. Input the total number of available resources and the available resource vector
+4. Create an array m to keep track of the processes that have been marked as not in a deadlock state
+5. Loop through each process and if it has no allocated resources, add it to the marked array
+6. Loop through each process again and if it is not in the marked array, check if it can be satisfied with the available resources.
+7. If the process can be satisfied, add it to the marked array and update the available resources
+8. If a process cannot be satisfied, skip it
+9. After all processes have been checked, output the processes that are not in the marked array as being in a deadlock state

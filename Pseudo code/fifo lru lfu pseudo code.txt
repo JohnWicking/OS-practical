@@ -1,0 +1,39 @@
+Fifo
+
+1. Read the length of reference string, reference string, and number of frames from user
+2. Initialize an array "m" of size "f" with -1
+3. Initialize variables "count" and "pf" to 0
+4. For each page "p" in reference string,
+   a. For each frame "f" in array "m",
+      i. If m[f] is equal to p, break out of loop
+   b. If none of the frames have the page "p",
+      i. Replace the page in the frame at position "count" with "p"
+      ii. Increment "count" and "pf"
+      iii. If "count" becomes equal to the number of frames, set it back to 0
+   c. Print the current state of frames and if there was a page fault, print the page fault number "pf"
+5. Print the total number of page faults "pf"
+
+
+Here's the pseudo code for the LRU (Least Recently Used) page replacement algorithm:
+
+    Read the length of the reference string and the reference string itself from the user.
+    Read the number of frames to be allocated.
+    Initialize an array m to hold the frames, and an array count to keep track of the time when each frame was last used. Also, initialize an array flag to keep track of whether a page fault occurred for each page in the reference string.
+    For each page in the reference string, perform the following steps:
+    a. For each frame, check if the current page is already in that frame. If it is, set the corresponding flag to 1 and update the count of the frame.
+    b. If the current page is not in any of the frames, check if there are empty frames available. If there are, allocate one of them to the current page and update the count.
+    c. If there are no empty frames available, find the frame with the smallest count, allocate it to the current page, and update the count.
+    d. If a page fault occurred for the current page, increment the page fault count.
+    e. Print the contents of the frames and the page fault count (if a page fault occurred).
+    Print the total number of page faults
+
+
+1. Input the number of page references (m), the reference string, and the available number of frames (f)
+2. Initialize cntr and a arrays to 0 and -1 respectively
+3. Initialize pf to 0
+4. For each page reference (i) in the reference string (rs), do the following:
+   a. For each frame (j) in the available frames (a), if the page reference is already in the frame, increment cntr[j] and break
+   b. If the page reference is not in any of the frames, find the minimum cntr[k] value and replace the page in frame k with the page reference i. Set cntr[k] to 1 and increment pf
+   c. Print the current frames and if a page fault occurred, print the page fault number (pf)
+5. Print the total number of page faults (pf)
+S
